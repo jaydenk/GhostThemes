@@ -1,0 +1,123 @@
+/* Lightbox Styles */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: var(--z-lightbox);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-base), visibility var(--transition-base);
+}
+
+.lightbox.is-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Backdrop - White */
+.lightbox-backdrop {
+    position: absolute;
+    inset: 0;
+    background: var(--color-white);
+}
+
+/* Close Button - Top Right */
+.lightbox-close {
+    position: absolute;
+    top: var(--spacing-lg);
+    right: var(--spacing-lg);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    color: var(--color-text-secondary);
+    transition: color var(--transition-fast);
+}
+
+.lightbox-close:hover {
+    color: var(--color-primary);
+}
+
+/* Content - Image centred */
+.lightbox-content {
+    position: relative;
+    z-index: 5;
+    max-width: 90vw;
+    max-height: 75vh;
+}
+
+.lightbox-image {
+    max-width: 90vw;
+    max-height: 75vh;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.lightbox-image.is-loaded {
+    opacity: 1;
+}
+
+/* Bottom Bar: prev arrow | title (centred) | next arrow */
+.lightbox-bottom {
+    position: absolute;
+    bottom: var(--spacing-xl);
+    left: var(--spacing-lg);
+    right: var(--spacing-lg);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.lightbox-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    color: var(--color-text-secondary);
+    transition: color var(--transition-fast);
+    flex-shrink: 0;
+}
+
+.lightbox-nav:hover {
+    color: var(--color-primary);
+}
+
+.lightbox-nav.is-hidden {
+    visibility: hidden;
+}
+
+.lightbox-title {
+    flex: 1;
+    text-align: center;
+    font-size: var(--text-sm);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: var(--color-text);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .lightbox-close {
+        top: var(--spacing-md);
+        right: var(--spacing-md);
+    }
+
+    .lightbox-bottom {
+        bottom: var(--spacing-md);
+        left: var(--spacing-sm);
+        right: var(--spacing-sm);
+    }
+
+    .lightbox-nav {
+        width: 40px;
+        height: 40px;
+    }
+}

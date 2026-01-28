@@ -1,0 +1,20 @@
+{{!< default}}
+
+<div class="gh-content">
+    {{#if @site.description}}
+    <section class="gh-hero">
+        <h1 class="gh-hero-title">{{@site.title}}</h1>
+        <p class="gh-hero-description">{{@site.description}}</p>
+    </section>
+    {{/if}}
+
+    {{#get "posts" limit="all" include="tags"}}
+    {{#if posts}}
+    <section class="gh-feed">
+        {{#foreach posts}}
+            {{> "post-card"}}
+        {{/foreach}}
+    </section>
+    {{/if}}
+    {{/get}}
+</div>

@@ -1,0 +1,146 @@
+/* Header Styles */
+.gh-head {
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.gh-head-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-2xl);
+    height: var(--header-height);
+}
+
+/* Brand / Logo */
+.gh-head-brand {
+    flex-shrink: 0;
+}
+
+.gh-head-logo {
+    font-size: var(--text-xl);
+    font-weight: 500;
+    color: var(--color-text);
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.gh-head-logo img {
+    max-height: 40px;
+    width: auto;
+}
+
+.gh-head-logo:hover {
+    color: var(--color-primary);
+}
+
+/* Navigation - Right Aligned */
+.gh-head-nav {
+    margin-left: auto;
+}
+
+.gh-head-menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 0;
+    list-style: none;
+}
+
+.gh-head-menu li {
+    display: inline-block;
+    white-space: nowrap;
+    padding: 0 var(--spacing-lg);
+}
+
+.gh-head-menu li:last-child {
+    padding-right: 0;
+}
+
+.gh-head-menu li + li {
+    border-left: 1px solid var(--color-border);
+}
+
+.gh-head-menu li a,
+.gh-head-menu .nav-current a {
+    font-size: var(--text-sm);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-secondary);
+    transition: color var(--transition-fast);
+    position: relative;
+}
+
+.gh-head-menu li a:hover,
+.gh-head-menu .nav-current a {
+    color: var(--color-primary);
+}
+
+/* Underline effect on hover */
+.gh-head-menu li a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-primary);
+    transition: width var(--transition-fast);
+}
+
+.gh-head-menu li a:hover::after,
+.gh-head-menu .nav-current a::after {
+    width: 100%;
+}
+
+/* Actions */
+.gh-head-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-left: var(--spacing-xl);
+}
+
+.gh-search-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: var(--color-text-secondary);
+    border-radius: var(--radius-full);
+    transition: all var(--transition-fast);
+}
+
+.gh-search-btn:hover {
+    color: var(--color-primary);
+    background: var(--color-border-light);
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    .gh-head-inner {
+        padding: 0 var(--spacing-lg);
+    }
+
+    .gh-head-menu li {
+        padding: 0 var(--spacing-md);
+    }
+
+    .gh-head-menu li a {
+        font-size: var(--text-xs);
+    }
+
+    .gh-head-actions {
+        margin-left: var(--spacing-md);
+    }
+}

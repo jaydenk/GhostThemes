@@ -1,0 +1,38 @@
+{{!< default}}
+
+<div class="gh-content">
+    {{#if @site.description}}
+    <section class="gh-hero">
+        <h1 class="gh-hero-title">{{@site.title}}</h1>
+        <p class="gh-hero-description">{{@site.description}}</p>
+    </section>
+    {{/if}}
+
+    <section class="gh-feed">
+        <h2 class="gh-feed-title">Latest Posts</h2>
+
+        {{#foreach posts}}
+            {{> "post-card"}}
+        {{/foreach}}
+    </section>
+
+    {{#if pagination.pages}}
+    <nav class="gh-pagination">
+        {{#if pagination.prev}}
+            <a class="gh-pagination-prev" href="{{pagination.prev}}">
+                {{> "icons/arrow-left"}} Newer
+            </a>
+        {{/if}}
+
+        <span class="gh-pagination-info">
+            Page {{pagination.page}} of {{pagination.pages}}
+        </span>
+
+        {{#if pagination.next}}
+            <a class="gh-pagination-next" href="{{pagination.next}}">
+                Older {{> "icons/arrow-right"}}
+            </a>
+        {{/if}}
+    </nav>
+    {{/if}}
+</div>

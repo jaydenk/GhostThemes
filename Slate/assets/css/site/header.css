@@ -1,0 +1,80 @@
+/* Header Styles */
+.gh-head {
+    background: var(--color-surface);
+    position: sticky;
+    top: 0;
+    z-index: var(--z-header);
+}
+
+.gh-head-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+    height: var(--header-height);
+}
+
+/* Brand / Logo */
+.gh-head-brand {
+    flex-shrink: 0;
+}
+
+.gh-head-logo {
+    font-size: var(--text-lg);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-text);
+}
+
+.gh-head-logo img {
+    max-height: 32px;
+    width: auto;
+}
+
+.gh-head-logo:hover {
+    opacity: 1;
+}
+
+/* Navigation - Right Aligned */
+.gh-head-nav {
+    margin-left: auto;
+}
+
+.gh-head-menu {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xl);
+}
+
+.gh-head-menu li a {
+    font-size: var(--text-sm);
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+    transition: color var(--transition-fast);
+}
+
+.gh-head-menu li a:hover,
+.gh-head-menu .nav-current a {
+    color: var(--color-primary);
+    opacity: 1;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+    .gh-head-inner {
+        padding: 0 var(--spacing-md);
+    }
+
+    .gh-head-menu {
+        gap: var(--spacing-lg);
+    }
+
+    .gh-head-menu li a {
+        font-size: var(--text-xs);
+    }
+}

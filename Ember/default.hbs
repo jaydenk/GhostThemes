@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="{{@site.locale}}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{meta_title}}</title>
+    <link rel="stylesheet" href="{{asset "built/screen.css"}}">
+    {{ghost_head}}
+</head>
+<body class="{{body_class}}">
+
+    <header class="gh-head">
+        <div class="gh-head-inner">
+            <div class="gh-head-brand">
+                <a class="gh-head-logo" href="{{@site.url}}">
+                    {{#if @site.logo}}
+                        <img src="{{@site.logo}}" alt="{{@site.title}}">
+                    {{else}}
+                        {{@site.title}}
+                    {{/if}}
+                </a>
+            </div>
+
+            <nav class="gh-head-nav">
+                <ul class="gh-head-menu">
+                    {{navigation}}
+                    {{#if @custom.photography_url}}
+                    <li class="nav-photography">
+                        <a href="{{@custom.photography_url}}">Photography</a>
+                    </li>
+                    {{/if}}
+                </ul>
+            </nav>
+
+            <div class="gh-head-actions">
+                {{#if @custom.show_search}}
+                <button class="gh-search-btn" data-ghost-search>
+                    {{> "icons/search"}}
+                </button>
+                {{/if}}
+            </div>
+        </div>
+    </header>
+
+    <main class="gh-main">
+        {{{body}}}
+    </main>
+
+    <footer class="gh-footer">
+        <div class="gh-footer-inner">
+            <div class="gh-footer-copyright">
+                &copy; {{date format="YYYY"}} {{@site.title}}
+            </div>
+            {{#if @site.secondary_navigation}}
+            <nav class="gh-footer-nav">
+                {{navigation type="secondary"}}
+            </nav>
+            {{/if}}
+        </div>
+    </footer>
+
+    {{ghost_foot}}
+    <script src="{{asset "built/main.min.js"}}"></script>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+{
+  "name": "slate",
+  "description": "A clean, monochromatic photography portfolio theme",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "ghost": ">=5.0.0"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Custom Theme",
+    "email": "theme@example.com"
+  },
+  "keywords": [
+    "ghost-theme"
+  ],
+  "config": {
+    "posts_per_page": 24,
+    "image_sizes": {
+      "xs": { "width": 150 },
+      "s": { "width": 400 },
+      "m": { "width": 800 },
+      "l": { "width": 1600 },
+      "xl": { "width": 2400 }
+    },
+    "card_assets": true,
+    "custom": {
+      "personal_site_url": {
+        "type": "text",
+        "description": "URL to your personal/blog site",
+        "default": ""
+      },
+      "gallery_columns": {
+        "type": "select",
+        "options": ["3", "4", "5"],
+        "default": "4"
+      }
+    }
+  },
+  "scripts": {
+    "dev": "gulp",
+    "build": "gulp build",
+    "test": "gscan .",
+    "zip": "gulp zip"
+  },
+  "devDependencies": {
+    "@tryghost/shared-theme-assets": "^2.5.0",
+    "autoprefixer": "^10.4.20",
+    "beeper": "^3.0.0",
+    "cssnano": "^7.0.6",
+    "gscan": "^4.46.0",
+    "gulp": "^5.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-livereload": "^4.0.2",
+    "gulp-postcss": "^10.0.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-zip": "^6.0.0",
+    "postcss": "^8.4.49",
+    "postcss-easy-import": "^4.0.0",
+    "pump": "^3.0.2"
+  }
+}

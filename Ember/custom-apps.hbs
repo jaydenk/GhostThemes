@@ -1,0 +1,29 @@
+{{!< default}}
+
+{{!--
+    Custom template for Apps/Projects page.
+    To use: Create a page in Ghost, then in the page settings
+    sidebar (gear icon), set the "Template" dropdown to "Custom Apps".
+
+    Content convention — repeat for each app/project:
+      H3 heading   → App name (left column, row 1)
+      Paragraph with a link → URL (left column, row 2)
+      Paragraph(s) → Description (right column, spanning both rows)
+--}}
+
+{{#post}}
+<article class="gh-article gh-page gh-apps-page">
+    {{#match @page.show_title_and_feature_image}}
+    <header class="gh-article-header">
+        <h1 class="gh-article-title">{{title}}</h1>
+        {{#if custom_excerpt}}
+        <p class="gh-article-excerpt">{{custom_excerpt}}</p>
+        {{/if}}
+    </header>
+    {{/match}}
+
+    <div class="gh-article-content gh-apps-content">
+        {{content}}
+    </div>
+</article>
+{{/post}}

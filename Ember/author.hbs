@@ -1,0 +1,44 @@
+{{!< default}}
+
+<div class="gh-content">
+    <section class="gh-author-header">
+        {{#if profile_image}}
+        <img class="gh-author-image" src="{{img_url profile_image size="m"}}" alt="{{name}}">
+        {{/if}}
+        <h1 class="gh-author-name">{{name}}</h1>
+        {{#if bio}}
+        <p class="gh-author-bio">{{bio}}</p>
+        {{/if}}
+        {{#if location}}
+        <p class="gh-author-location">{{> "icons/location"}} {{location}}</p>
+        {{/if}}
+    </section>
+
+    <section class="gh-feed">
+        <h2 class="gh-feed-title">Posts by {{name}}</h2>
+
+        {{#foreach posts}}
+            {{> "post-card"}}
+        {{/foreach}}
+    </section>
+
+    {{#if pagination.pages}}
+    <nav class="gh-pagination">
+        {{#if pagination.prev}}
+            <a class="gh-pagination-prev" href="{{pagination.prev}}">
+                {{> "icons/arrow-left"}} Newer
+            </a>
+        {{/if}}
+
+        <span class="gh-pagination-info">
+            Page {{pagination.page}} of {{pagination.pages}}
+        </span>
+
+        {{#if pagination.next}}
+            <a class="gh-pagination-next" href="{{pagination.next}}">
+                Older {{> "icons/arrow-right"}}
+            </a>
+        {{/if}}
+    </nav>
+    {{/if}}
+</div>

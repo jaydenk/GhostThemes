@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="{{@site.locale}}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{meta_title}}</title>
+    <link rel="stylesheet" href="{{asset "built/screen.css"}}">
+    {{ghost_head}}
+</head>
+<body class="{{body_class}} columns-{{@custom.gallery_columns}}">
+
+    <header class="gh-head">
+        <div class="gh-head-inner">
+            <div class="gh-head-brand">
+                <a class="gh-head-logo" href="{{@site.url}}">
+                    {{#if @site.logo}}
+                        <img src="{{@site.logo}}" alt="{{@site.title}}">
+                    {{else}}
+                        {{@site.title}}
+                    {{/if}}
+                </a>
+            </div>
+
+            <nav class="gh-head-nav">
+                <ul class="gh-head-menu">
+                    {{navigation}}
+                    {{#if @custom.personal_site_url}}
+                    <li class="nav-personal">
+                        <a href="{{@custom.personal_site_url}}">About</a>
+                    </li>
+                    {{/if}}
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="gh-main">
+        {{{body}}}
+    </main>
+
+    <footer class="gh-footer">
+        <div class="gh-footer-inner">
+            <span class="gh-footer-copyright">&copy; {{date format="YYYY"}} {{@site.title}}</span>
+            {{#if @site.secondary_navigation}}
+            <nav class="gh-footer-nav">
+                {{navigation type="secondary"}}
+            </nav>
+            {{/if}}
+        </div>
+    </footer>
+
+    {{> "lightbox"}}
+
+    {{ghost_foot}}
+    <script src="{{asset "built/main.min.js"}}"></script>
+
+</body>
+</html>

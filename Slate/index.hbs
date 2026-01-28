@@ -1,0 +1,27 @@
+{{!< default}}
+
+<div class="gh-gallery">
+    {{#foreach posts}}
+        {{> "gallery-item"}}
+    {{/foreach}}
+</div>
+
+{{#if pagination.pages}}
+<nav class="gh-pagination">
+    {{#if pagination.prev}}
+        <a class="gh-pagination-prev" href="{{pagination.prev}}">
+            {{> "icons/arrow-left"}} Newer
+        </a>
+    {{/if}}
+
+    <span class="gh-pagination-info">
+        Page {{pagination.page}} of {{pagination.pages}}
+    </span>
+
+    {{#if pagination.next}}
+        <a class="gh-pagination-next" href="{{pagination.next}}">
+            Older {{> "icons/arrow-right"}}
+        </a>
+    {{/if}}
+</nav>
+{{/if}}

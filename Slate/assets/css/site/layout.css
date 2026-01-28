@@ -1,0 +1,93 @@
+/* Site Layout */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.gh-main {
+    flex: 1;
+    padding: var(--spacing-md);
+}
+
+/* Tag Header */
+.gh-tag-header {
+    text-align: center;
+    padding: var(--spacing-xl) var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.gh-tag-title {
+    font-size: var(--text-2xl);
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.gh-tag-description {
+    color: var(--color-text-secondary);
+    margin-top: var(--spacing-sm);
+}
+
+/* Pagination */
+.gh-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xl);
+    padding: var(--spacing-2xl) var(--spacing-md);
+}
+
+.gh-pagination a {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    transition: color var(--transition-fast);
+}
+
+.gh-pagination a:hover {
+    color: var(--color-text);
+    opacity: 1;
+}
+
+.gh-pagination-info {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+}
+
+/* Page Template */
+.gh-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--spacing-2xl) var(--spacing-lg);
+}
+
+.gh-page-header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.gh-page-title {
+    font-weight: 400;
+    letter-spacing: 0.05em;
+}
+
+.gh-page-image {
+    margin-bottom: var(--spacing-2xl);
+}
+
+.gh-page-image img {
+    width: 100%;
+}
+
+.gh-page-content {
+    font-size: var(--text-lg);
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+}
+
+.gh-page-content p {
+    margin-bottom: var(--spacing-lg);
+}

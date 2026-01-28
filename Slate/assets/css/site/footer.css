@@ -1,0 +1,38 @@
+/* Footer Styles */
+.gh-footer {
+    background: var(--color-surface);
+    padding: var(--spacing-lg);
+}
+
+.gh-footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.gh-footer-copyright {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    letter-spacing: 0.05em;
+}
+
+.gh-footer-nav ul {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+.gh-footer-nav a {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.gh-footer-nav a:hover {
+    color: var(--color-text);
+    opacity: 1;
+}

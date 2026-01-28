@@ -1,0 +1,45 @@
+/* Footer Styles */
+.gh-footer {
+    background: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    margin-top: auto;
+}
+
+.gh-footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--spacing-xl) var(--spacing-2xl);
+}
+
+.gh-footer-copyright {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+}
+
+.gh-footer-nav ul {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+.gh-footer-nav a {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    transition: color var(--transition-fast);
+}
+
+.gh-footer-nav a:hover {
+    color: var(--color-primary);
+}
+
+@media (max-width: 640px) {
+    .gh-footer-inner {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        text-align: center;
+        padding: var(--spacing-xl) var(--spacing-lg);
+    }
+}

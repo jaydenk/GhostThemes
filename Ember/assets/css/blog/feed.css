@@ -1,0 +1,14 @@
+/* Post Feed - Editorial Blog Style */
+.gh-feed {
+    display: flex;
+    flex-direction: column;
+}
+
+.gh-feed-title {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+    margin-bottom: var(--spacing-xl);
+}

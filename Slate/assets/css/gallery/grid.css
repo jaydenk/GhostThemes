@@ -1,0 +1,82 @@
+/* Gallery Grid - Masonry via CSS columns */
+.gh-gallery {
+    column-count: var(--gallery-columns);
+    column-gap: var(--gallery-gap);
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+/* Gallery Item */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    background: var(--color-gray-200);
+    break-inside: avoid;
+    margin-bottom: var(--gallery-gap);
+}
+
+.gallery-item-link {
+    display: block;
+    position: relative;
+}
+
+.gallery-item-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform var(--transition-slow);
+}
+
+.gallery-item:hover .gallery-item-image {
+    transform: scale(1.05);
+}
+
+/* Date Overlay on Hover */
+.gallery-item-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: var(--spacing-md);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.gallery-item:hover .gallery-item-overlay {
+    opacity: 1;
+}
+
+.gallery-item-date {
+    font-size: var(--text-xs);
+    font-weight: 500;
+    color: var(--color-primary);
+    letter-spacing: 0.05em;
+    background: rgba(0, 0, 0, 0.5);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: 2px;
+}
+
+/* Responsive columns */
+@media (max-width: 1200px) {
+    .gh-gallery {
+        --gallery-columns: 3;
+    }
+}
+
+@media (max-width: 800px) {
+    .gh-gallery {
+        --gallery-columns: 2;
+    }
+}
+
+@media (max-width: 500px) {
+    .gh-gallery {
+        --gallery-columns: 1;
+        column-gap: var(--spacing-sm);
+    }
+
+    .gallery-item {
+        margin-bottom: var(--spacing-sm);
+    }
+}
