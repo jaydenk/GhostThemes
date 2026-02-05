@@ -1,0 +1,14 @@
+routes:
+
+  collections:
+    /linked/:
+      permalink: /linked/{slug}/
+      filter: tag:linked
+      template: index
+    /:
+      permalink: /{slug}/
+      filter: tag:-linked
+
+  taxonomies:
+    tag: /tag/{slug}/
+    author: /author/{slug}/
